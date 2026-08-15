@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AEP Downgrader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <main class="app-shell">
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-icon">
+                    <span>Ae</span>
+                    <small>AEP</small>
+                </div>
+                <div>
+                    <h1>AEP <span>Downgrader</span></h1>
+                    <p>Adobe After Effects Project Converter</p>
+                </div>
+            </div>
+            <div class="status-pill">
+                <span class="status-dot"></span>
+                ONLINE
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-copy">
+                <div class="eyebrow">FAST • SIMPLE • COMPATIBLE</div>
+                <h2>Downgrade your<br><strong>AEP projects.</strong></h2>
+                <p>
+                    Upload your After Effects project, detect its current version,
+                    choose a lower version and download the converted file.
+                </p>
+            </div>
+
+            <div class="upload-card" id="dropZone">
+                <div class="upload-icon">↓</div>
+                <h3>Drop your .AEP file here</h3>
+                <p>or click to browse from your device</p>
+
+                <input type="file" id="fileInput" accept=".aep" hidden>
+
+                <button class="primary-btn" id="browseBtn">
+                    Choose AEP File
+                </button>
+
+                <div class="file-info hidden" id="fileInfo">
+                    <div class="file-name" id="fileName"></div>
+                    <div class="file-version" id="fileVersion"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel hidden" id="versionPanel">
+            <div class="panel-header">
+                <div>
+                    <span class="eyebrow">VERSION DETECTED</span>
+                    <h3 id="detectedVersion">AE --.x</h3>
+                </div>
+                <span class="mini-badge">READY</span>
+            </div>
+
+            <p class="panel-text">
+                Select the After Effects version you want to downgrade to.
+            </p>
+
+            <div class="version-grid" id="versionGrid"></div>
+
+            <div class="processing hidden" id="processing">
+                <div class="spinner"></div>
+                <div>
+                    <strong>Processing project...</strong>
+                    <span>Please wait while your AEP file is converted.</span>
+                </div>
+            </div>
+
+            <div class="error-box hidden" id="errorBox"></div>
+        </section>
+
+        <footer>
+            <div>© AEP Downgrader</div>
+            <div class="owner-credit">
+                <span>👑 Owner &amp; Developer: <strong>Ravi</strong></span>
+                <a class="social-link instagram" href="https://www.instagram.com/rxviiiii_/?igsh=c3VtaWZ6NG02Ym0w" target="_blank" rel="noopener" aria-label="Instagram">
+                    <span class="social-icon">◎</span> Instagram
+                </a>
+                <a class="social-link telegram" href="https://t.me/RAVIOXY" target="_blank" rel="noopener" aria-label="Telegram">
+                    <span class="social-icon">➤</span> Telegram
+                </a>
+            </div>
+        </footer>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
